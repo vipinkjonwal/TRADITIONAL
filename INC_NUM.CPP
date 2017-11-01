@@ -16,34 +16,29 @@
 
 void rec_incnum(int dig,int i,char a[],int s);
 
-void main()
-{
-clrscr();
-int n;
-char a[10];
-cout<<"\n Enter the number of digits:";
-cin>>n;
-rec_incnum(0,0,a,n);
-getch();
+void main() {
+    clrscr();
+    int n;
+    char a[10];
+    cout << "\n Enter the number of digits:";
+    cin>>n;
+    rec_incnum(0,0,a,n);
+    getch();
 }
 
-void rec_incnum(int dig,int i, char a[10],int s)
-{
+void rec_incnum(int dig,int i, char a[10],int s) {
 
-if(dig==s)
-{
-a[s]='\0';
-cout<<a<<" ";
-}
-else
-{
-for(int j=i;j<=9;j++)
-{
-char arr[10];
-strcpy(arr,a);
-arr[dig]=(j+48);
-rec_incnum(dig+1,j+1,arr,s);
-}//for
+    if(dig==s) {
+        a[s]='\0';
+        cout<<a<<" ";
+    }
 
-}//else
-}
+    else {
+        for(int j = i;j <= 9;++j) {
+            char arr[10];
+            strcpy(arr,a);
+            arr[dig]=(j+48);
+            rec_incnum(dig+1,j+1,arr,s);
+        }//endFor
+    }//endElse
+}//endFunction
